@@ -12,7 +12,7 @@ document.getElementById("submitPassword").addEventListener("click", () => {
         errorMessage.classList.add("hidden");
         loadNextStep();
     } else {
-        errorMessage.textContent = "Неверный пароль. Попробуй снова!";
+        errorMessage.textContent = "Неверный пароль!";
         errorMessage.classList.remove("hidden");
     }
 });
@@ -20,10 +20,10 @@ document.getElementById("submitPassword").addEventListener("click", () => {
 function loadNextStep() {
     document.body.innerHTML = `
         <div class="container">
-            <h1>Когда мы начали общаться? (Формат: YYYY-MM-DD)</h1>
+            <h1>Когда мы начали общаться? (Формат: День.Месяц.Год)</h1>
             <input type="text" id="dateInput" placeholder="Введите дату">
             <button id="submitDate">Продолжить</button>
-            <p id="errorMessage" class="hidden">Неверная дата. Попробуй снова!</p>
+            <p id="errorMessage" class="hidden">Неверная дата!</p>
         </div>
     `;
 
@@ -34,7 +34,7 @@ function loadNextStep() {
         if (dateInput === correctDate) {
             loadBirthdayStep();
         } else {
-            errorMessage.textContent = "Неверная дата. Попробуй снова!";
+            errorMessage.textContent = "Неверная дата!";
             errorMessage.classList.remove("hidden");
         }
     });
@@ -43,10 +43,10 @@ function loadNextStep() {
 function loadBirthdayStep() {
     document.body.innerHTML = `
         <div class="container">
-            <h1>Когда у меня день рождения? (Формат: YYYY-MM-DD)</h1>
+            <h1>Когда у меня день рождения? (Формат: День.Месяц.Год)</h1>
             <input type="text" id="birthdayInput" placeholder="Введите дату">
             <button id="submitBirthday">Продолжить</button>
-            <p id="errorMessage" class="hidden">Неверная дата. Попробуй снова!</p>
+            <p id="errorMessage" class="hidden">Неверная дата!</p>
         </div>
     `;
 
@@ -57,7 +57,7 @@ function loadBirthdayStep() {
         if (birthdayInput === birthday) {
             loadNameStep();
         } else {
-            errorMessage.textContent = "Неверная дата. Попробуй снова!";
+            errorMessage.textContent = "Неверная дата!";
             errorMessage.classList.remove("hidden");
         }
     });
@@ -66,10 +66,10 @@ function loadBirthdayStep() {
 function loadNameStep() {
     document.body.innerHTML = `
         <div class="container">
-            <h1>Как зовут любящего тебя?</h1>
+            <h1>Как зовут любимого?</h1>
             <input type="text" id="nameInput" placeholder="Введите имя">
             <button id="submitName">Продолжить</button>
-            <p id="errorMessage" class="hidden">Неверное имя. Попробуй снова!</p>
+            <p id="errorMessage" class="hidden">Неверное имя!</p>
         </div>
     `;
 
@@ -80,7 +80,7 @@ function loadNameStep() {
         if (nameInput === yourName) {
             loadFinalMessage();
         } else {
-            errorMessage.textContent = "Неверное имя. Попробуй снова!";
+            errorMessage.textContent = "Неверное имя!";
             errorMessage.classList.remove("hidden");
         }
     });
